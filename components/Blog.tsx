@@ -9,7 +9,7 @@ export default function Blog() {
         <SectionHead title="Blog" num="04 / Chapter Log" />
         <div className="blog-grid">
           {posts.map((p) => (
-            <div className="polaroid" key={p.slug}>
+            <div className="polaroid" key={p.slug} data-reveal="pop">
               <div className="tape" />
               <div className="polaroid-photo"><span className="stamp">{p.stamp}</span></div>
               <div className="polaroid-date">{p.date}</div>

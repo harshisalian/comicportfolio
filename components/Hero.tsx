@@ -23,7 +23,7 @@ export default function Hero() {
           <div className="hero-side">
             <div className="panel avatar-panel fade-up d2">
               <Mascot />
-              <span className="cap">Udupi, Karnataka — Open to Work</span>
+              <span className="cap">Udupi, Karnataka — Open to Work anywhere in the world </span>
             </div>
             <div className="panel speech-panel fade-up d3">
               <SpeechBubble />

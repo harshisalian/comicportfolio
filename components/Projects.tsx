@@ -8,7 +8,7 @@ export default function Projects() {
         <SectionHead title="Projects" num="02 / Chapters" />
         <div className="proj-grid">
           {projects.map((p, i) => (
-            <div className={`proj-card${p.wide ? " wide" : ""}`} key={p.title}>
+            <div className={`proj-card${p.wide ? " wide" : ""}`} key={p.title} data-reveal="up">
               <div className="proj-chapter">Chapter {String(i + 1).padStart(2, "0")}</div>
               <h3>{p.title}</h3>
               <p>{p.text}</p>

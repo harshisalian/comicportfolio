@@ -39,7 +39,7 @@ export default function ContactForm() {
     status === "sending" ? "Sending..." : status === "sent" ? "Message sent" : "Send Message";
 
   return (
-    <form className="form-card" onSubmit={onSubmit}>
+    <form className="form-card" onSubmit={onSubmit} data-reveal="right">
       <div className="beat">Leave a Message</div>
       <div className="field">
         <label htmlFor="cname">Name</label>

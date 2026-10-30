@@ -2,7 +2,10 @@ import type { Metadata } from "next";
 import { Anton, Archivo } from "next/font/google";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import ComicBackground from "@/components/ComicBackground";
+import ScrollReveal from "@/components/ScrollReveal";
 import "./globals.css";
+import "./comic.css";
 
 const anton = Anton({ weight: "400", subsets: ["latin"], variable: "--font-anton", display: "swap" });
 const archivo = Archivo({ subsets: ["latin"], variable: "--font-archivo", display: "swap" });
@@ -21,6 +24,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={`${anton.variable} ${archivo.variable}`}>
       <body>
+        <ComicBackground />
+        <ScrollReveal />
         <Nav />
         <main>{children}</main>
         <Footer />

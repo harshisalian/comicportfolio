@@ -9,7 +9,7 @@ export default function Connect() {
       <div className="wrap">
         <SectionHead title="Connect" num="05 / Send a Signal" />
         <div className="connect-grid">
-          <div className="stat-card">
+          <div className="stat-card" data-reveal="left">
             <div className="beat">Profile Sheet</div>
             <div className="stat-line"><span>Location</span><span>{site.location}</span></div>
             <div className="stat-line"><span>Email</span><a href={`mailto:${site.email}`}>{site.email}</a></div>

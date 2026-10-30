@@ -1,0 +1,61 @@
+/* Black & white comic background + scroll reveal */
+main, footer{position:relative;z-index:1;}
+
+.comic-bg{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;}
+
+/* halftone dots clustered in opposite corners */
+.comic-dots{
+  position:absolute;inset:0;
+  background-image:radial-gradient(var(--ink) 1.3px, transparent 1.8px);
+  background-size:16px 16px;
+  opacity:.09;
+  -webkit-mask-image:radial-gradient(circle at 0% 0%, #000, transparent 42%), radial-gradient(circle at 100% 100%, #000, transparent 42%);
+          mask-image:radial-gradient(circle at 0% 0%, #000, transparent 42%), radial-gradient(circle at 100% 100%, #000, transparent 42%);
+}
+/* bigger dots in the other two corners */
+.comic-dots::after{
+  content:"";position:absolute;inset:0;
+  background-image:radial-gradient(var(--ink) 2.4px, transparent 2.9px);
+  background-size:30px 30px;
+  opacity:.8;
+  -webkit-mask-image:radial-gradient(circle at 100% 0%, #000, transparent 30%), radial-gradient(circle at 0% 100%, #000, transparent 30%);
+          mask-image:radial-gradient(circle at 100% 0%, #000, transparent 30%), radial-gradient(circle at 0% 100%, #000, transparent 30%);
+}
+
+/* cursor spotlight */
+.comic-glow{
+  position:absolute;inset:0;opacity:0;transition:opacity .4s ease;
+  background-image:radial-gradient(var(--ink) 1.4px, transparent 1.9px);
+  background-size:12px 12px;
+  -webkit-mask-image:radial-gradient(circle 170px at var(--mx, 50%) var(--my, 50%), #000, transparent);
+          mask-image:radial-gradient(circle 170px at var(--mx, 50%) var(--my, 50%), #000, transparent);
+}
+.comic-bg[data-active="1"] .comic-glow{opacity:.17;}
+
+/* speed lines rising from the bottom centre */
+.comic-rays{
+  position:absolute;inset:0;opacity:.045;
+  background:repeating-conic-gradient(from 0deg at 50% 115%, var(--ink) 0deg .8deg, transparent .8deg 7deg);
+  -webkit-mask-image:linear-gradient(to top, #000, transparent 70%);
+          mask-image:linear-gradient(to top, #000, transparent 70%);
+}
+
+/* outlined sound-effect words, outline only so it stays pure black & white */
+.comic-word{
+  position:absolute;
+  font-family:var(--font-anton), sans-serif;
+  text-transform:uppercase;line-height:1;white-space:nowrap;
+  color:transparent;-webkit-text-stroke:2px var(--ink);
+  opacity:.07;
+}
+.comic-word.w1{top:12vh;right:3vw;font-size:clamp(90px,14vw,220px);rotate:8deg;}
+.comic-word.w2{top:56vh;left:1vw;font-size:clamp(80px,12vw,190px);rotate:-10deg;}
+.comic-word.w3{top:76vh;right:14vw;font-size:clamp(70px,10vw,160px);rotate:5deg;}
+
+@media (max-width:820px){
+  .comic-word{display:none;}
+  .comic-dots{opacity:.07;}
+}
+
+/* scroll reveal: hidden until the script reveals it (script adds .reveal-ready) */
+.reveal-ready [data-reveal]:not(.is-in){opacity:0;}

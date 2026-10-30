@@ -27,12 +27,12 @@ export default async function PostPage({ params }: Props) {
         <div className="wrap">
           <Link href="/#blog" className="post-back">Back to blog</Link>
           <div className="post-vol">Vol. {String(index + 1).padStart(2, "0")}</div>
-          <h1 className="display">{post.title}</h1>
+          <h1 className="display" data-reveal="left">{post.title}</h1>
           <div className="post-date">{post.date}</div>
         </div>
       </section>
       <div className="wrap">
-        <article className="post-body">
+        <article className="post-body" data-reveal="up">
           <div className="edit-note">
             Draft placeholder. Write your post in app/blog/[slug]/page.tsx or move posts to MDX files later.
           </div>
