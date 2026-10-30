@@ -1,0 +1,30 @@
+/* About panels: dark by default, invert to white on hover/focus */
+.about-strip .strip-panel,
+.about-strip .strip-panel:nth-child(2){
+  background:var(--white);
+  color:var(--ink);
+  transition:background-color .25s ease, color .25s ease, transform .2s ease, box-shadow .2s ease;
+}
+.about-strip .strip-panel:nth-child(2) p{color:#d6d4cc;}
+.about-strip .strip-panel:nth-child(2) .beat{color:var(--gray);}
+
+.about-strip .strip-panel:hover,
+.about-strip .strip-panel:focus-visible{
+  background:var(--ink);
+  color:var(--paper);
+  transform:translate(-3px,-3px);
+  box-shadow:6px 6px 0 var(--accent);
+  outline:none;
+}
+.about-strip .strip-panel:hover p,
+.about-strip .strip-panel:focus-visible p{color:#3a3a36;}
+.about-strip .strip-panel:hover .beat,
+.about-strip .strip-panel:focus-visible .beat{color:#6b6a63;}
+.about-strip .strip-panel:hover .corner,
+.about-strip .strip-panel:focus-visible .corner{color:var(--paper);opacity:.2;}
+
+@media (prefers-reduced-motion: reduce){
+  .about-strip .strip-panel{transition:none;}
+  .about-strip .strip-panel:hover,
+  .about-strip .strip-panel:focus-visible{transform:none;}
+}
