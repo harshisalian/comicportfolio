@@ -1,4 +1,8 @@
 import Link from "next/link";
+import Mascot from "./Mascot";
+import SpeechBubble from "./SpeechBubble";
+import { cvHref, facts } from "@/lib/hero";
+import "@/app/hero.css";
 
 export default function Hero() {
   return (
@@ -12,19 +16,27 @@ export default function Hero() {
             <div className="hero-cta-row">
               <Link href="/#projects" className="btn">View Projects</Link>
               <Link href="/#connect" className="btn ghost">Get in Touch</Link>
+              <a href={cvHref} className="btn ghost" download>Download CV</a>
             </div>
             <div className="scroll-cue"><span className="chev" /> Next Panel</div>
           </div>
           <div className="hero-side">
             <div className="panel avatar-panel fade-up d2">
-              {/* Swap this for your avatar: <Image src="/avatar.png" alt="" fill /> */}
-              <span className="mark">日</span>
+              <Mascot />
               <span className="cap">Udupi, Karnataka — Open to Work</span>
             </div>
             <div className="panel speech-panel fade-up d3">
-              &ldquo;Eligible for immediate joining. Currently building full-stack tools and looking for a team that wants both the engineer and the artist.&rdquo;
+              <SpeechBubble />
             </div>
           </div>
+        </div>
+        <div className="hero-facts fade-up d3">
+          {facts.map((f) => (
+            <div className="panel fact" key={f.label}>
+              <span className="fact-num">{f.value}</span>
+              <span className="fact-label">{f.label}</span>
+            </div>
+          ))}
         </div>
       </div>
     </section>
