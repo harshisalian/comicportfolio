@@ -34,7 +34,7 @@ export const projects: Project[] = [
   { title: "Financify", wide: true, href: "https://github.com/harshisalian/financify",
     text: "A workforce financial tracking platform with scalable backend services for real-time uptime tracking, incident detection and asynchronous health checks. Redis-backed async task processing keeps it responsive under high throughput.",
     tags: ["Next.js", "React.js", "MongoDB", "Express.js", "FastAPI", "Redis"] },
-  { title: "Expense Tracker", href: "https://github.com/harshisalian/dailyspendbyharshie",
+  { title: "Expense Tracker", href: "https://github.com/harshisalian/dailyspend",
     text: "Full-stack app for logging, categorizing and viewing expenses, with a Flask backend and a MySQL schema built for clean CRUD operations.",
     tags: ["Python", "Flask", "MySQL"] },
   { title: "Nail Disease Detection", href: "https://github.com/harshisalian/naildiseasededtection",
