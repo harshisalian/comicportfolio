@@ -56,6 +56,29 @@ const all: Post[] = [
     ],
   },
   {
+    slug: "google-cloud-community-day-2025",
+    kind: "Event",
+    stamp: "GDG",
+    date: "13 Dec 2025",
+    sortKey: "2025-12-13",
+    title: "Attending Google Cloud Community Day 2025",
+    excerpt: "Exploring cloud technologies, hands-on demos, and connecting with the developer community at GDG Cloud Mangalore.",
+    image: "/certificates/gdg.png",
+    facts: [
+      ["Organisation", "GDG Cloud Mangalore"],
+      ["Event", "Google Cloud Community Day 2025"],
+      ["Date", "13 December 2025"],
+      ["Location", "Mangalore"],
+      ["Focus", "Cloud Computing, Google Cloud Technologies, Developer Community"],
+    ],
+    body: [
+      "On 13 December 2025, I attended Google Cloud Community Day 2025 organised by GDG Cloud Mangalore.",
+      "The event was a great opportunity to explore the latest cloud technologies through insightful sessions, hands-on demonstrations, and inspiring talks from industry experts.",
+      "I also enjoyed connecting with fellow developers and cloud enthusiasts, exchanging ideas, and learning more about the evolving cloud ecosystem.",
+      "An inspiring experience that encouraged me to keep learning, building, and growing as a developer."
+    ],
+  },
+  {
     slug: "ieee-student-member-2025",
     kind: "Membership",
     stamp: "IEEE",

@@ -1,5 +1,6 @@
 import SectionHead from "./SectionHead";
 import { internships, courses, type Cert } from "@/lib/certs";
+import CertCard from "./CertCard";
 import "@/app/content.css";
 
 function Group({ title, items }: { title: string; items: Cert[] }) {
@@ -7,19 +8,18 @@ function Group({ title, items }: { title: string; items: Cert[] }) {
     <div className="cert-group">
       <div className="cert-group-title" data-reveal="left">{title}</div>
       <div className="cert-row">
-        {items.map((c) => (
-          <div className="badge" key={c.title + c.date} data-reveal="pop">
-            <div className="seal" data-reveal="stamp">{c.seal}</div>
-            <h3>{c.title}</h3>
-            <div className="issuer">{c.issuer}</div>
-            <div className="date">{c.kind} · {c.date}</div>
-            {c.file && (
-              <a className="cert-link" href={c.file} target="_blank" rel="noopener noreferrer">
-                View certificate
-              </a>
-            )}
-          </div>
-        ))}
+        {items.map((c) =>
+          c.image ? (
+            <CertCard cert={c} key={c.title + c.date} />
+          ) : (
+            <div className="badge" key={c.title + c.date} data-reveal="pop">
+              <div className="seal" data-reveal="stamp">{c.seal}</div>
+              <h3>{c.title}</h3>
+              <div className="issuer">{c.issuer}</div>
+              <div className="date">{c.kind} · {c.date}</div>
+            </div>
+          )
+        )}
       </div>
     </div>
   );

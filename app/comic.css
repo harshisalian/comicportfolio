@@ -57,5 +57,5 @@ main, footer{position:relative;z-index:1;}
   .comic-dots{opacity:.07;}
 }
 
-/* scroll reveal: hidden until the script reveals it (script adds .reveal-ready) */
-.reveal-ready [data-reveal]:not(.is-in){opacity:0;}
+/* scroll reveal: the script hides an element only while it waits below the fold */
+[data-reveal][data-hide]{opacity:0;}
