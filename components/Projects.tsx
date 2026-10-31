@@ -1,5 +1,5 @@
 import SectionHead from "./SectionHead";
-import { projects } from "@/lib/data";
+import { projects } from "@/lib/projects";
 
 export default function Projects() {
   return (
